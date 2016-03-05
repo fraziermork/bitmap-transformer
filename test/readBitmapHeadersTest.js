@@ -11,8 +11,8 @@ describe('readBitmapHeadersTest:', function(){
   it('should return object that lists the bitmap headers from a bitmap without palette', function(done){
     let bitmap = fs.readFileSync(__dirname + '/../img/non-palette-bitmap.bmp');
     let bitmapData = readBitmapHeaders(bitmap);
-    console.log('bitmapData is:');
-    console.dir(bitmapData);
+    // console.log('bitmapData is:');
+    // console.dir(bitmapData);
     expect(bitmapData).to.have.property('headField');
     expect(bitmapData).to.have.property('numberBytes');
     expect(bitmapData).to.have.property('pixelArrayOffset');
@@ -23,8 +23,8 @@ describe('readBitmapHeadersTest:', function(){
   it('should return object that lists the bitmap headers from a bitmap with palette', function(done){
     let bitmap = fs.readFileSync(__dirname + '/../img/palette-bitmap.bmp');
     let bitmapData = readBitmapHeaders(bitmap);
-    console.log('bitmapData is:');
-    console.dir(bitmapData);
+    // console.log('bitmapData is:');
+    // console.dir(bitmapData);
     expect(bitmapData).to.have.property('headField');
     expect(bitmapData).to.have.property('numberBytes');
     expect(bitmapData).to.have.property('pixelArrayOffset');

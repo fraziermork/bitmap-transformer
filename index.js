@@ -1,6 +1,9 @@
+'use strict';
 const fs = require('fs');
 const readBitmapHeaders = require(__dirname + '/lib/readBitmapHeaders.js');
-const invertColors = require(__dirname + '/lib/invertColors.js');
+const colors = require(__dirname + '/lib/colors.js');
+const os = require('os');
+
 
 //for stream use fs.createReadStream
 //for async us fs.readFile
