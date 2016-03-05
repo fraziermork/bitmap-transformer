@@ -24,9 +24,11 @@ if(bitmapData.pixelArrayOffset === 54){
 }
 
 for (let i = bitmapData.pixelArrayOffset; i < bitmapData.numberBytes - 4; i += 4){
-  var invertedColorObj = colors.invertRGBAColor(colors.readRGBAColor(i, bitmap));
-  colors.writeRGBAColor(i, bitmap, invertedColorObj);
-  colors.readRGBAColor(i, bitmap);
+  // var invertedColorObj = colors.invertRGBAColorObj(colors.readRGBAColor(i, bitmap));
+  // colors.writeRGBAColor(i, bitmap, invertedColorObj);
+  // colors.readRGBAColor(i, bitmap);
+  colors.invertRGBAColor(i, bitmap);
+  
 }
 
 
