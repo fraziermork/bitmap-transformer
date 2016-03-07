@@ -3,12 +3,9 @@
 const fs = require('fs');
 const readBitmapHeaders = require(__dirname + '/lib/readBitmapHeaders.js');
 const colors = require(__dirname + '/lib/colors.js');
-const os = require('os');
 
-var endianness = os.endianness();
-console.log('endianness is ' + endianness);
-
-fs.readFile(__dirname + '/img/' + process.argv[2], 'utf8', function(err, bitmap){
+fs.readFile(__dirname + '/img/' + process.argv[2], function(err, bitmap){
+  console.log('got inside readFile');
   let bitmapData = readBitmapHeaders(bitmap);
   console.log('bitmapData is');
   console.dir(bitmapData);

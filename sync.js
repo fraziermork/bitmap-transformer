@@ -5,11 +5,6 @@ const readBitmapHeaders = require(__dirname + '/lib/readBitmapHeaders.js');
 const colors = require(__dirname + '/lib/colors.js');
 
 
-
-
-
-
-
 //for stream use fs.createReadStream
 //for async us fs.readFile
 let bitmap = fs.readFileSync(__dirname + '/img/' + process.argv[2]);
@@ -39,10 +34,10 @@ if (paletteFlag === true){
 } else if (paletteFlag === false){
   console.log('paletteFlag false');
   for (let i = bitmapData.pixelArrayOffset; i < bitmapData.numberBytes - 4; i += 4){
-    var invertedColorObj = colors.invertRGBAColorObj(colors.readRGBAColor(i, bitmap));
-    colors.writeRGBAColor(i, bitmap, invertedColorObj);
-    colors.readRGBAColor(i, bitmap);
-    // colors.invertRGBAColor(i, bitmap);
+    // var invertedColorObj = colors.invertRGBAColorObj(colors.readRGBAColor(i, bitmap));
+    // colors.writeRGBAColor(i, bitmap, invertedColorObj);
+    // colors.readRGBAColor(i, bitmap);
+    colors.invertRGBAColor(i, bitmap);
   }
 }
 
