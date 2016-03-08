@@ -18,6 +18,6 @@ describe('colors:', function(){
       b: 255,
       a: 155
     };
-    expect(colors.invertRGBAColor(input)).to.eql(expected);
+    expect(colors.invertRGBAColorObj(input)).to.eql(expected);
   });
 });
